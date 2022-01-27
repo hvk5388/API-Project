@@ -1,6 +1,8 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 import { UserIP } from './UserIP.js';
+// import '@lrnwebcomponents/wikipedia-query/wikipedia-query.js';
+// import {WikipediaQuery} from '@lrnwebcomponents/wikipedia-query/wikipedia-query.js';
 
 export class LocationFromIP extends LitElement {
   static get tag() {
@@ -60,7 +62,9 @@ export class LocationFromIP extends LitElement {
     // this function runs every time a properties() declared variable changes
     // this means you can make new variables and then bind them this way if you like
     const url = `https://maps.google.com/maps?q=${this.long},${this.lat}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
-    return html`<iframe title="Where you are" src="${url}"></iframe> `;
+    return html` <iframe title="Where you are" src="${url}"></iframe>
+      <br /><br />
+      <a href="${url}" target="_blank">${url}</a>`;
   }
 }
 
